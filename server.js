@@ -7,7 +7,7 @@ const app = express();
 require('./server/conf/express')(app,conf);
 
 initializeDatabases.then(dbs => {
-    console.log(process.env.DB_TYPE + " Connected !!!", dbs.user);
+    console.log(process.env.DB_TYPE + " Connected !!!");
     
     require('./server/conf/routes')(app, dbs);
 

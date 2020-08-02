@@ -4,7 +4,8 @@
   "description": "store configs for project ",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:server": "nodemon --ignore sessions/ server.js"
   },
   "author": "shivanand",
   "license": "ISC",
@@ -13,8 +14,11 @@
     "convict": "^6.0.0",
     "dotenv": "^8.1.0",
     "express": "^4.17.1",
+    "express-session": "^1.17.1",
     "mongodb": "^3.5.9",
     "mongoose": "^5.9.26",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "session-file-store": "^1.4.0",
+    "uuid": "^8.3.0"
   }
 }

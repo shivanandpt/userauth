@@ -1,5 +1,6 @@
 module.exports = function (app, dbs) {
 
+    const { v4: uuidv4 } = require('uuid');
     //Models are created
     var User = require('../models/userModel')(dbs.core);
 
@@ -9,6 +10,11 @@ module.exports = function (app, dbs) {
 
 
     //Routes are assigned to app and created
+    app.get('/', (req, res) => {
+        
+        console.log("2 sesssionID ",req.sessionID);
+        res.send('you just hit the home page' + req.sessionID);
+    });
     app.use('/test', userRoutes);
   
 
