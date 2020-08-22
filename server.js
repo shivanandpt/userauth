@@ -6,7 +6,6 @@ const app = express();
 
 initializeDatabases.then(dbs => {
     console.log(process.env.DB_TYPE + " Connected !!!");
-    
     require('./server/conf/express')(app, conf, dbs);
     require('./server/conf/routes')(app, dbs);
 

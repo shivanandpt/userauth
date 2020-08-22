@@ -13,7 +13,9 @@ var routes = function (User) {
     });
 
     userRouter.post('/user', function (req ,res, next) {
-        const user = new User(req.body);
+        let user = new User(req.body);
+        user.setPassword(req.body.password);
+        delete user.password;
         user.save(function (err, user) {
             if (err) return console.error(err);
             console.log(user);
