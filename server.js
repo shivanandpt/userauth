@@ -4,11 +4,9 @@ const initializeDatabases = require('./server/conf/db')
 const express = require('express')
 const app = express();
 
-require('./server/conf/express')(app,conf);
-
 initializeDatabases.then(dbs => {
     console.log(process.env.DB_TYPE + " Connected !!!");
-    
+    require('./server/conf/express')(app, conf, dbs);
     require('./server/conf/routes')(app, dbs);
 
     app.listen(conf.get("port"),() => console.log('Listening on port ' +

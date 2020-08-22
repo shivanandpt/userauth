@@ -17,5 +17,9 @@
             "host": "localhost",
             "port": 27017
         }   
-    ]
+    ], 
+    "sessions": {
+        "store": "mongodb",
+        "maxAge": 900000
+    }
 }
